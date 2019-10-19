@@ -1,3 +1,9 @@
+body {
+  background-image: url("./../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .footer {
   position: fixed;
   bottom: 0;
@@ -73,3 +79,11 @@
    margin-top: 20px;
    font-size: 25px;
  }
+
+.toggle-button {
+  right: 0;
+}
+
+.header {
+  margin-top: 5px;
+}

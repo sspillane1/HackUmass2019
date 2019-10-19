@@ -12,3 +12,22 @@ window.setInterval(function () {
     document.getElementById('window-size').innerHTML = 'sm: ' + w
   }
 }, 100)
+
+const monochrome = document.getElementById("monochrome-toggle");
+const correction = document.getElementById("correction-toggle");
+
+monochrome.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    console.log('Monochrome: On')
+  } else {
+    console.log('Monochrome: Off')
+  }
+})
+
+correction.addEventListener('change', (event) => {
+  if (event.target.checked) {
+    console.log('Color Correction: On')
+  } else {
+    console.log('Color Correction: Off')
+  }
+})

@@ -17,4 +17,12 @@
 .img-block {
   margin-top: 30px;
   margin-bottom: 5px;
+  width: 300%;
+  min-width: 100px;
+}
+
+body {
+  background-image: url("./../img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
