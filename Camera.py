@@ -16,14 +16,12 @@ class CamApp(App):
         layout.add_widget(self.img1)
         #opencv2 stuffs
         self.capture = cv2.VideoCapture(0)
-        cv2.namedWindow("CV2 Image")
         Clock.schedule_interval(self.update, 1.0/33.0)
         return layout
 
     def update(self, dt):
         # display image from cam in opencv window
         ret, frame = self.capture.read()
-        cv2.imshow("CV2 Image", frame)
         # convert it to texture
         # Manual Approach
         blue = frame[:, :, 1]
