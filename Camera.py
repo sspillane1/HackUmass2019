@@ -1,59 +1,41 @@
-'''
-Camera Example
-==============
-
-This example demonstrates a simple use of the camera. It shows a window with
-a buttoned labelled 'play' to turn the camera on and off. Note that
-not finding a camera, perhaps because gstreamer is not installed, will
-throw an exception during the kv language processing.
-
-'''
-
-# Uncomment these lines to see all the messages
-# from kivy.logger import Logger
-# import logging
-# Logger.setLevel(logging.TRACE)
-
+__author__ = 'bunkus'
 from kivy.app import App
-from kivy.lang import Builder
+from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
-import time
-Builder.load_string('''
-<CameraClick>:
-    orientation: 'vertical'
-    Camera:
-        id: camera
-        resolution: (640, 480)
-        play: False
-    ToggleButton:
-        text: 'Play'
-        on_press: camera.play = not camera.play
-        size_hint_y: None
-        height: '48dp'
-    Button:
-        text: 'Capture'
-        size_hint_y: None
-        height: '48dp'
-        on_press: root.capture()
-''')
+from kivy.uix.image import Image
+from kivy.clock import Clock
+from kivy.graphics.texture import Texture
 
+import cv2
 
-class CameraClick(BoxLayout):
-    def capture(self):
-        '''
-        Function to capture the images and give them the names
-        according to their captured time and date.
-        '''
-        camera = self.ids['camera']
-        timestr = time.strftime("%Y%m%d_%H%M%S")
-        camera.export_to_png("IMG_{}.png".format(timestr))
-        print("Captured")
-
-
-class TestCamera(App):
+class CamApp(App):
 
     def build(self):
-        return CameraClick()
+        self.img1=Image()
+        layout = BoxLayout()
+        layout.add_widget(self.img1)
+        #opencv2 stuffs
+        self.capture = cv2.VideoCapture(0)
+        cv2.namedWindow("CV2 Image")
+        Clock.schedule_interval(self.update, 1.0/33.0)
+        return layout
 
+    def update(self, dt):
+        # display image from cam in opencv window
+        ret, frame = self.capture.read()
+        cv2.imshow("CV2 Image", frame)
+        # convert it to texture
+        # Manual Approach
+        blue = frame[:, :, 1]
 
-TestCamera().run()
+        frame[:, :, 0] = blue
+        buf1 = cv2.flip(frame, 0)
+        buf = buf1.tostring()
+        texture1 = Texture.create(size=(frame.shape[1], frame.shape[0]), colorfmt='bgr')
+        texture1.blit_buffer(buf, colorfmt='bgr', bufferfmt='ubyte')
+        # display image from the texture
+        self.img1.texture = texture1
+
+if __name__ == '__main__':
+    CamApp().run()
+    cv2.destroyAllWindows()
