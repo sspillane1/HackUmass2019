@@ -1,11 +1,19 @@
 var video, amountOfCameras;
 var currentFacingMode = 'environment';
 var btn = document.getElementById('coolbtn');
+var temp_width, temp_height;
 _init();
 function _init() {
         DetectRTC.load(function() {
           initCameraUI();
-          initCameraStream();
+          window.setInterval(function () {
+              if (window.innerWidth != temp_width || temp_height != temp_height) {
+              initCameraStream();
+              temp_width = window.innerWidth;
+              temp_height = window.getHeight
+            }
+
+          }, 1000)
         });
 }
 
