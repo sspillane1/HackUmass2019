@@ -1,0 +1,41 @@
+body {
+    margin:0px;
+    padding: 0px;
+    background: #000;
+}
+
+#vid_container {
+    position: fixed;
+    top: 0; left: 0;
+}
+
+#video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+#video_overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 10;
+    background-color:#111;
+}
+
+#switchCameraButton[aria-pressed="true"] {
+    background-image: url('./../img/cameraflip.png');
+}
+
+@media screen and (orientation:portrait) {
+    #vid_container {
+        width:100%;
+    }
+}
