@@ -1,12 +1,8 @@
+
 body {
     margin:0px;
     padding: 0px;
     background: #FFF;
-}
-
-#vid_container {
-    position: fixed;
-    top: 0; left: 0;
 }
 
 #video{
@@ -73,14 +69,4 @@ body {
 @media screen and (max-height: 100%){
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
-
-#switchCameraButton[aria-pressed="true"] {
-    background-image: url('./../img/cameraflip.png');
-}
-
-@media screen and (orientation:portrait) {
-    #vid_container {
-        width:100%;
-    }
 }

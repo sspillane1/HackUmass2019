@@ -1,48 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Camera Input Page</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-      <div id="mySideNav" class="sidenav">
-        <a href="javascript:void(0)" class="closeb" onclick ="closeNav()"&times;></a>
-        <a href="#">Color Swap</a>
-        <a href="#">Monochrome</a>
-        <a href="#">Options</a>
-      </div>
-      <div id="main">
-        <div class="container-fluid position-relative w-100">
-          <div class="row bg-transparent position-absolute">
-            <div align="center" class="embed-responsive-1by1 position-absolute ">
-              <video autoplay="true" id="videoElement"></video>
-            </div>
-          </div>
-          <button type="button" class="btn btn-link">
-              <img src="img/cameraflip.png" onclick="Animation" width="40" />
-          </button>
-          <button onclick="$.getscript("",function() {openNav()})">open</button>
-        </div>
-      </div>
-    </div>
-    </div>
-    <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/video.css">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./lib/js/jquery-3.4.1.min.js"></script>
     <script src="./lib/js/popper.min.js"></script>
     <script src="./lib/js/bootstrap.min.js"></script>
-    <script src="./lib/tracking.js-master/build/tracking-min.js"></script>
-    <script src="./lib/js/screenfull.min.js"></script>
-    <script src="./node_modules/detectrtc/DetectRTC.min.js"></script>
-    <script data-main="./js/video" src=./node_modules/requirejs/require.js type='text/javascript'></script>
+    <script src="./js/video.js"></script>
+    <link rel="stylesheet" href="./css/video.css">
+    <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="mySideNav" class="sidenav">
+      <a href="javascript:void(0)" class="closeb" onclick ="closeNav()"&times;></a>
+      <a href="#">Color Swap</a>
+      <a href="#">Monochrome</a>
+      <a href="#">Options</a>
+    </div>
+    <div id="main">
+      <div class="container position-relative w-100">
+        <div class="row position-absolute">
+          <div align="center" class="embed-responsive-1by1 position-absolute ">
+            <video autoplay="true" id="videoElement"></video>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary btn-block" id="coolbtn">
+          <img src="img/cameraflip.png" onclick="Animation" width="40" />
+        </button>
+      </div>
+    </div>
   </body>
 </html>
 
 
 
-<div class="container-fluid position-relative w-100">
+<!--div class="container-fluid position-relative w-100">
     <div class ="bg-transparent position-absolute" align="center">
     </div>
-</div>
-<script type="text/javascript"></script>
+</div-->
