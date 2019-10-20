@@ -1,77 +1,4 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-    <title>cordova-plugin-camera-preview Sample App</title>
-    <link rel="stylesheet" type="text/css" href="css/video.css" />
-  </head>
-  <body>
-    <div class="controls">
-      <div class="block">
-        <button id="startCameraAboveButton">Start Camera Above HTML</button>
-        <button id="stopCameraButton">Stop Camera</button>
-      </div>
-
-      <div class="block">
-        <p style="margin-top:0px"><button id="startCameraBelowButton">Start Camera Behind HTML</button></p>
-
-        <p style="margin-bottom:0px">
-          Color Effect:
-          <select id="selectColorEffect">
-            <option selected value="none">none</option>
-            <option value="aqua">aqua</option>
-            <option value="blackboard">blackboard</option>
-            <option value="mono">mono</option>
-            <option value="negative">negative</option>
-            <option value="posterize">posterize</option>
-            <option value="sepia">sepia</option>
-            <option value="solarize">solarize</option>
-            <option value="whiteboard">whiteboard</option>
-          </select>
-        </p>
-
-        <p style="margin-bottom:0px;">
-          Flash Mode:
-          <select id="selectFlashMode">
-            <option selected value="off">off</option>
-            <option value="on">on</option>
-            <option value="auto">auto</option>
-            <option value="torch">torch</option>
-          </select>
-        </p>
-
-        <div id="androidOnly">
-          <p style="margin-bottom:0px;">
-            Zoom:
-            <span id="zoomValue"style="margin: 0 5px;">1</span>
-            <input type="range" id="zoomSlider" min="1" max="5" value="1" />
-          </p>
-        </div>
-      </div>
-      <div class="block">
-        <button id="takePictureButton">Take Picture</button>
-        <button id="switchCameraButton">Switch Camera</button>
-        <button id="changePreviewSize">Change Preview Size</button>
-      </div>
-      <div class="block">
-        <button id="hideButton">Hide</button>
-        <button id="showButton">Show</button>
-      </div>
-      <div class="block">
-        <button id="showSupportedPictureSizes">Supported Picture Sizes</button>
-      </div>
-    </div>
-
-    <div class="pictures">
-      <p><img id="originalPicture" width="200"/></p>
-    </div>
-
-    <script type="text/javascript" src="./../node_modules/cordova-common/cordova-common.js"></script>
-    <script type="text/javascript" src="node_modules/cordova-plugin-camera-preview/www/CameraPreview.js"></script>
-    <script type="text/javascript" data-main="js/video.js" src="node_modules/requirejs/require.js"></script>
-  </body>
-</html>
-<!--!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Camera Input Page</title>
@@ -79,10 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-      <div id="container">
-        <div id="vid_container">
-          <video id="video" style="background-color: #808080" autoplay playsinline></video>
-        <div id="video_overlay"></div>
+      <div class="container-fluid">
+        <div class="row">
+          <div align="center" class="embed-responsive-1by1 position-absolute ">
+            <video autoplay="true" id="videoElement"></video>
+          </div>
+              <a href="javascript:void(0)" class="closeb" onclick="closeNav()">
+                  &times;
+              </a>
+              <a href="#">Color Swap</a>
+              <a href="options.html">Options</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="invisbutton" style="visibility: hidden">
@@ -98,32 +33,19 @@
     <script src="./node_modules/detectrtc/DetectRTC.min.js"></script>
     <script data-main="./js/video" src=./node_modules/requirejs/require.js></script>
   </body>
-</html-->
+</html>
 
 
 
-
-
-
-<!--&lt;!&ndash;div id="sidebar" class="sidenav">-->
-<!--    <a href="javascript:void(0)" class="closeb" onclick="closeNav()">-->
-<!--        &times;-->
-<!--    </a>-->
-<!--    <a href="#">Color Swap</a>-->
-<!--    <a href="options.html">Options</a>-->
-<!--</div>-->
-<!--<div class="container-fluid position-relative w-100">-->
-<!--    <div align="center" class="embed-responsive-1by1 position-absolute ">-->
-<!--      <video autoplay="true" id="videoElement"></video>-->
-<!--    </div>-->
-<!--    <div class ="bg-transparent position-absolute" align="center">-->
-<!--        <button type="button" class="btn btn-link">-->
-<!--            <img src="img/cameraflip.png" onclick="Animation" width="40" />-->
-<!--        </button>-->
-<!--        <span class="col order-last" style="font-size:30px;cursor:pointer" onclick="openNav()">-->
-<!--            &#9776;-->
-<!--        </span>-->
-<!--    </div>-->
-<!--</div>-->
-<!--<script type="text/javascript">-->
-<!--</script&ndash;&gt;-->
+<div class="container-fluid position-relative w-100">
+    <div class ="bg-transparent position-absolute" align="center">
+        <button type="button" class="btn btn-link">
+            <img src="img/cameraflip.png" onclick="Animation" width="40" />
+        </button>
+        <span class="col order-last" style="font-size:30px;cursor:pointer" onclick="openNav()">
+            &#9776;
+        </span>
+    </div>
+</div>
+<script type="text/javascript">
+</script&ndash;&gt;>
