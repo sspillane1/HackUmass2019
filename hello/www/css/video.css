@@ -1,3 +1,4 @@
+/*
 body {
     margin:0px;
     padding: 0px;
@@ -38,4 +39,37 @@ body {
     #vid_container {
         width:100%;
     }
+}
+*/
+body, html{
+  height:100%;
+}
+body{
+  color:#333;
+  text-align: center;
+  font-family: sans-serif;
+  background-color: transparent;
+  background-image: url('../img/background.png');
+  background-repeat:repeat;
+  background-size: cover;
+}
+.block{
+  padding:.25rem 0;
+  margin:.25rem 0;
+  background: #00ccff;
+  border:1px solid #111;
+  border-radius: 3px;
+}
+button{
+  background: gray:
+  color:#333;
+  border-radius: 3px;
+  border:1px solid #ccc;
+  margin:.25rem;
+}
+.pictures{
+
+}
+.controls{
+  margin-top:100%;
 }
